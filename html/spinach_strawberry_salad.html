@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinach and Strawberry Salad</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 0;
+      }
+      .head {
+        background-image: url("..\\images\\spinach_strawberry_salad.jpg");
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .head .gradient {
+        width: 100%;
+        padding-left: 20px;
+        height: 150px;
+        background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+      }
+      .head h1 {
+        position: absolute;
+        bottom: 0;
+      }
+      .content {
+        padding: 3px;
+      }
+      .recipe-overview {
+        float: right;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-spacing: 0;
+        border: 1px grey solid;
+        border-radius: 4px;
+        padding: 5px;
+      }
+      .recipe-overview th {
+        text-align: right;
+        padding-right: 4px;
+        font-weight: normal;
+      }
+      .recipe-overview .rowsep td:not(:first-child):not(:last-child) {
+        border-bottom: 1px rgb(184, 184, 184) solid;
+      }
+      .ings-dirs {
+        display: flex;
+        flex-wrap: wrap;
+        clear: right;
+      }
+      .ings-dirs div {
+        margin-right: 20px;
+      }
+      .directions-list h4 {
+        margin: 0 8px;
+      }
+      .directions-list p {
+        margin: 5px 6px 15px 15px;
+      }
+      .footer {
+        margin-top: 20px;
+        min-height: 40px;
+        border-top: 1px grey solid;
+        padding-top: 10px;
+        text-align: center;
+      }
+      .footer .link-back::before {
+        content: "<";
+        font-size: 120%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="head">
+      <div class="gradient">
+        <h1>Spinach and Strawberry Salad</h1>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <table class="recipe-overview">
+        <tr>
+          <th colspan=2>Prep. time:</th>
+          <td colspan=2>10 min</td>
+        </tr>
+        <tr class="rowsep">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan=2>Total time:</th>
+          <td colspan=2>10 min</td>
+        </tr>
+        <tr class="rowsep">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan=2>Yield:</th>
+          <td colspan=2>8 servings</td>
+        </tr>
+      </table>
+
+      <div class="intro">
+        Whether you need a healthy lunch or are looking for a salad to bring
+        to a party that – this is critical – people actually want to eat,
+        this spinach and strawberry salad is the recipe for you!
+      </div>
+      
+      <div class="ings-dirs">
+
+        <div class="ingredients">
+          <h3>Ingredients</h3>
+          <ul class="ingredients-list">
+            <li>1 bunch spinach</li>
+            <li>2 cups sliced strawberries</li>
+            <li>1/4 cup vegetable oil</li>
+            <li>2 tablespoons vinegar</li>
+            <li>1/4 cup sugar</li>
+            <li>1/8 teaspoon paprika</li>
+            <li>1 tablespoon sesame seeds</li>
+          </ul>
+        </div>
+        
+        <div class="directions">
+          <h3>Directions</h3>
+          <div class="directions-list">
+            <h4>Step 1</h4>
+            <p>In a large bowl, toss together the spinach and the strawberries.</p>
+            <h4>Step 2</h4>
+            <p>
+              In a medium bowl, whisk together the oil, vinegar, sugar, paprika,
+              <br/>
+              sesame seeds, and poppy seeds.
+            </p>
+            <h4>Step 3</h4>
+            <p>Pour the mixture over the spinach and strawberries, and toss to coat.</p>
+          </div>
+        </div>
+      
+      </div>
+    
+    </div>
+
+    <div class="footer">
+      <div class="link-back">
+        <a href="../index.html">Back to Main Page</a>
+      </div>
+    </div>
+
+  </body>
+</html>
