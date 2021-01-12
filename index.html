@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <style>
+      .row {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #9c0;
+        padding: 10px;
+      }
+      .col {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titel der Seite | Name der Website</title>
+    <title>First assignment</title>
   </head>
   <body>
     <h1>Welcome to our dinner site</h1>
 
     <h2>Please enter some ingredients</h2>
-
-    <form>
-      <div class="field">
-        <label for="i1">first ingredient</label>
-        <input type="text" id="i1" placeholder="..."/>
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="field">
+            <label for="i1">first ingredient</label>
+            <input type="text" id="i1" placeholder="..."/>
+          </div>
+  
+          <div class="field">
+            <label for="i2">second ingredient</label>
+            <input type="text" id="i2" placeholder="..."/>
+          </div>
+          <div class="field">
+            <label for="i3">third ingredient</label>
+            <input type="text" id="i3" placeholder="..."/> 
+          </div>
+          <div class="field">
+            <input type="submit"/>
+          </div>
+        </form>
       </div>
-
-      <div class="field">
-        <label for="i2">second ingredient</label>
-        <input type="text" id="i2" placeholder="..."/>
-        
+      <hr/>
+      <div class="col">
+        <ul>
+          <li><a href="./html/spinach_strawberry_salad.html">Spinach Strawberry Salad</a></li>
+          <li><a href="./html/Rezept.html">Spaghetti Carbonara</a></li>
+        </ul>
       </div>
-      <div class="field">
-        <label for="i3">third ingredient</label>
-        <input type="text" id="i3" placeholder="..."/>
-        
-      </div>
-      <div class="field">
-        <input type="submit"/>
-      </div>
-    </form>
+     
+    </div>
     
-    <hr/>
-
-    <ul>
-      <li><a href="./html/spinach_strawberry_salad.html">Spinach Strawberry Salad</a></li>
-      <li><a href="./html/Rezept.html">Spaghetti Carbonara</a></li>
-      <li></li>
-    </ul>
 
   </body>
 </html>
