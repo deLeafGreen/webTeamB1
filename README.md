@@ -12,3 +12,6 @@ Im Frontend werden Rezepte, zugehörige Bilder und Links angezeigt, zudem gibt e
 # Backend
 
 Im Backend sollte ein noch nicht näher bestimmtes DBMS stehen.
+
+
+https://github.com/deLeafGreen/webTeamB1
