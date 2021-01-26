@@ -1,0 +1,10 @@
+FROM ubuntu:20.04
+MAINTAINER Philipp Fleischer <s_fleischer19@stud.hwr-berlin.de>
+
+
+RUN apt update
+RUN apt upgrade -y
+
+RUN apt install nodejs npm -y
+RUN apt install git -y
+
