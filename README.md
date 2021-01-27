@@ -20,8 +20,15 @@ https://github.com/deLeafGreen/webTeamB1
 # Wie wird die app gestartet?
 gehen Sie in das Eltern Verzeichnis, des repository,
 
+# Windows
 ## Docker build
 Get-Content .\static\webdocker | docker build -
 
 ## Docker run
+docker run -p 8080:3000 -i \<docker-image \>
+
+
+# MacOs/Linux/ andere Unixoide
+
+docker build - < ./static/webdocker
 docker run -p 8080:3000 -i \<docker-image \>
