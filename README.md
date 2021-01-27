@@ -15,3 +15,8 @@ Im Backend sollte ein noch nicht näher bestimmtes DBMS stehen.
 
 
 https://github.com/deLeafGreen/webTeamB1
+
+
+# Wie wird die app gestartet?
+
+Nutzen Sie bitte npm start um das index.js Script auszuführen
