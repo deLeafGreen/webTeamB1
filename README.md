@@ -25,10 +25,12 @@ gehen Sie in das Eltern Verzeichnis, des repository,
 Get-Content .\static\webdocker | docker build -
 
 ## Docker run
-docker run -p 8080:3000 -i \<docker-image \>
+docker run -p 8080:3000 -i docker-image
+
+wobei docker image die sha256 id des dockercontainers ist
 
 
 # MacOs/Linux/ andere Unixoide
 
 docker build - < ./static/webdocker
-docker run -p 8080:3000 -i \<docker-image \>
+docker run -p 8080:3000 -i docker-image
