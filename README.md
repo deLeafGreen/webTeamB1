@@ -33,4 +33,5 @@ wobei docker image die sha256 id des dockercontainers ist
 # MacOs/Linux/ andere Unixoide
 
 docker build - < ./static/webdocker
+
 docker run -p 8080:3000 -i docker-image
