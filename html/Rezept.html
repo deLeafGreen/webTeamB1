@@ -6,11 +6,11 @@
     <title></title>
     <style>
       .KommenatarBox {
-          width: 60%;
-          margin-left: auto;
-          margin-right: auto;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .Kommenatar{
+      .Kommenatar {
         margin: 50px;
         border-style: solid;
       }
@@ -18,9 +18,8 @@
   </head>
   <script>
     function favorite() {
-      var fav = document.querySelector('.favorite').checked;
+      var fav = document.querySelector(".favorite").checked;
       if (fav == true) {
-          
       }
     }
   </script>
@@ -101,18 +100,24 @@
       </div>
       <div class="KommenatarBox">
         <h3>Kommentare</h3>
-        <div class: "Kommenatar">
+        <div class="Kommenatar">
           <h4>UserName</h4>
           <div>
             KommentarText
           </div>
         </div>
-        <form action="/postComment" method="post">
-          <label>Kommenatar
-             <textarea name="Kommenatar"></textarea>
-          </label>
-          <label><input type="submit" value="Absenden" /><label>
-       </form>
+        <form action="/comment" method="post">
+          <label for="commentText">Kommentar</label>
+          <input
+            type="text"
+            name="commentText"
+            id="commentText"
+            placeholder="Kommentartext"
+          />
+          <input type="hidden" name="author" value="" />
+          <input type="hidden" name="recipePage" value="spaghetti" />
+          <input type="submit" value="Absenden" />
+        </form>
       </div>
     </div>
   </body>

@@ -7,6 +7,7 @@ const express = require("express");
 const app = express();
 var path = require("path");
 const port = 3000;
+const { v4: uuidv4 } = require("uuid");
 
 const comments = [];
 
@@ -31,15 +32,25 @@ app.post("/login", (req, res) => {
   }
 });
 
-app.post("/postComment", (req, res) => {
+app.post("/comment", (req, res) => {
   // store comment to backend
-  comments.push(req.body.comment);
+  const comment = req.body;
+  comment.id = uuidv4();
+  comments.push(comment);
   res.send();
+});
+
+app.get("/comment/:author", (req, res) => {
+  const author = req.params.author;
+  const commentsToReturn = comments.find((listenElement) => {
+    return listenElement.author === author;
+  });
+  res.send(commentsToReturn);
 });
 
 //hard coded routing
 app.get("/", function (req, res) {
-  console.log("I am in /index");
+  console.log("I am in /");
   // redirect to /login if no username set
   if (res.cookies === undefined || res.cookies.username === undefined) {
     res.redirect("/login");
