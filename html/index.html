@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <link rel="stylesheet" href="./static/index.css"/>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/index.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>First assignment</title>
   </head>
   <body>
@@ -15,32 +15,40 @@
         <form>
           <div class="field">
             <label for="i1">first ingredient</label>
-            <input type="text" id="i1" placeholder="..."/>
+            <input type="text" id="i1" placeholder="..." />
           </div>
-  
+
           <div class="field">
             <label for="i2">second ingredient</label>
-            <input type="text" id="i2" placeholder="..."/>
+            <input type="text" id="i2" placeholder="..." />
           </div>
           <div class="field">
             <label for="i3">third ingredient</label>
-            <input type="text" id="i3" placeholder="..."/> 
+            <input type="text" id="i3" placeholder="..." />
           </div>
           <div class="field">
-            <input type="submit"/>
+            <input type="submit" />
           </div>
         </form>
       </div>
-      <hr/>
+      <hr />
       <div class="col">
         <ul>
           <li><a href="/spinach">Spinach Strawberry Salad</a></li>
           <li><a href="/rezept">Spaghetti Carbonara</a></li>
         </ul>
       </div>
-     
     </div>
-    
 
+    <p>Most visited page: <span id="mostvisited"></span></p>
+
+    <script>
+      const mostvisitedElem = document.getElementById("mostvisited");
+      fetch("https://b8jno.sse.codesandbox.io/mostvisited")
+        .then((response) => response.text())
+        .then((mvp) => {
+          mostvisitedElem.innerHTML = mvp;
+        });
+    </script>
   </body>
 </html>
