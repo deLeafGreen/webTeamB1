@@ -17,14 +17,52 @@
     </style>
   </head>
   <script>
+    function getFavorite() {
+      var fav = getCookie("CarbonaraFav");
+      console.log(fav);
+      document.querySelector(".favorite").checked = fav;
+    }
     function favorite() {
       var fav = document.querySelector(".favorite").checked;
       if (fav == true) {
+        setCookie("CarbonaraFav", true, 4);
+      } else {
+        setCookie("CarbonaraFav", false, 4);
       }
     }
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    document.onload = setFavorite();
   </script>
   <body>
-    <input class="favorite" type="checkbox" id="favorite" />
+    <input
+      class="favorite"
+      onchange="favorite()"
+      type="checkbox"
+      id="favorite"
+      method="POST"
+    />
     <div class="wrapper">
       <h1>Spaghetti Carbonara</h1>
       <h3>Klassiker aus 5 Zutaten</h3>
@@ -66,7 +104,7 @@
       <div class="Arbeit">
         <h3>Vorbereitung</h3>
         Die Vorbereitung ist das A und O bei diesem Rezept, da es sonst gegen
-        Ende hektisch wir wird. Der erste schritt ist erwartungsgemäß ein großen
+        Ende hektisch wird. Der erste schritt ist erwartungsgemäß ein großen
         Topf Wasser zum Kochen zu bringen. Währenddessen kann der Schinken in
         ca. 0,5cm große Würfel geschnitten und anschließend in einer großen
         Pfanne auf mittlerer Hitze ausgelassen. Für die cremige Soße wird der
@@ -98,27 +136,41 @@
         … Moment mal wo ist die Sahne? Das ist ein Carbonara Rezept und nicht
         für Schinken Sahnesoße…
       </div>
-      <div class="KommenatarBox">
-        <h3>Kommentare</h3>
-        <div class="Kommenatar">
-          <h4>UserName</h4>
-          <div>
-            KommentarText
-          </div>
-        </div>
+      <div id="commentBox">
+        <h3 id="commentsHeader">Kommentare</h3>
         <form action="/comment" method="post">
-          <label for="commentText">Kommentar</label>
+          <label for="commentText">Kommentar schreiben</label>
           <input
             type="text"
             name="commentText"
             id="commentText"
             placeholder="Kommentartext"
           />
-          <input type="hidden" name="author" value="" />
           <input type="hidden" name="recipePage" value="spaghetti" />
           <input type="submit" value="Absenden" />
         </form>
       </div>
     </div>
+
+    <script>
+      // fetch all comments
+      const commentarea = document.getElementById("commentBox");
+      fetch("https://b8jno.sse.codesandbox.io/comment")
+        .then((response) => response.json())
+        .then((commentsData) => {
+          document.getElementById("commentsHeader").innerHTML +=
+            " (" + commentsData.length + ")";
+          commentsData.forEach((comm) => {
+            const commwrapper = document.createElement("div");
+            commwrapper.classList.add("comment");
+            const userheading = document.createElement("h4");
+            userheading.innerHTML = "User: " + comm.author;
+            const commenttext = document.createElement("div");
+            commenttext.innerHTML = "Comment: " + comm.commentText;
+            commwrapper.appendChild(userheading).appendChild(commenttext);
+            commentarea.appendChild(commwrapper);
+          });
+        });
+    </script>
   </body>
 </html>

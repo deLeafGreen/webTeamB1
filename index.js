@@ -126,14 +126,42 @@ app.get("/mostvisited", function (req, res) {
 
 app.post("/comment", (req, res) => {
   // store comment to backend
-  const comment = req.body;
+  const comment = {};
+  comment.commentText = req.body.commentText;
+  comment.recipePage = req.body.recipePage;
+  comment.author = req.cookies.username;
   comment.id = uuidv4();
+  console.log("Storing comment to backend: " + comment);
   comments.push(comment);
+  console.log("Stored comment. List of all comments:");
+  console.log(comments);
+  res.redirect("/");
   res.send();
 });
 
+app.get("/comment", (req, res) => {
+  // get all comments from backend
+  res.send(comments);
+});
+
+app.get("/comment/:recipePage", (req, res) => {
+  // get comments with specified recipePage from backend
+  console.log("I am in /comment/:recipePage.");
+
+  var commentsToReturn = [];
+  for (var comment in comments) {
+    if (comment.recipePage === req.params.recipePage) {
+      commentsToReturn.push(comment);
+    }
+  }
+
+  console.log("Sending the following comment data:");
+  console.log(commentsToReturn);
+  res.send(commentsToReturn);
+});
+
 app.get("/comment/:author", (req, res) => {
-  // get comment from backend
+  // get comments with specified author from backend
   const author = req.params.author;
   const commentsToReturn = comments.find((listenElement) => {
     return listenElement.author === author;

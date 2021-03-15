@@ -79,11 +79,11 @@
         font-size: 120%;
       }
       .KommenatarBox {
-          width: 60%;
-          margin-left: auto;
-          margin-right: auto;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .Kommenatar{
+      .Kommenatar {
         margin: 50px;
         border-style: solid;
       }
@@ -92,7 +92,7 @@
 
   <body>
     <div class="head">
-      <input type="radio" id="favorite" />
+      <input type="radio" id="favorite" onchange="favorite()" />
       <div class="gradient">
         <h1>Spinach and Strawberry Salad</h1>
       </div>
@@ -167,21 +167,48 @@
           </div>
         </div>
       </div>
-      <div class="KommenatarBox">
-          <h3>Kommentare</h3>
-          <div class: "Kommenatar">
-            <h4>UserName</h4>
-            <div>
-              KommentarText
-            </div>
-          </div>
-        </div>
+
+      <div id="commentBox">
+        <h3 id="commentsHeader">Kommentare</h3>
+        <form action="/comment" method="post">
+          <label for="commentText">Kommentar schreiben</label>
+          <input
+            type="text"
+            name="commentText"
+            id="commentText"
+            placeholder="Kommentartext"
+          />
+          <input type="hidden" name="recipePage" value="spinach" />
+          <input type="submit" value="Absenden" />
+        </form>
+      </div>
     </div>
 
     <div class="footer">
       <div class="link-back">
-        <a href="../index.html">Back to Main Page</a>
+        <a href="/">Back to Main Page</a>
       </div>
     </div>
+
+    <script>
+      // fetch all comments
+      const commentarea = document.getElementById("commentBox");
+      fetch("https://b8jno.sse.codesandbox.io/comment")
+        .then((response) => response.json())
+        .then((commentsData) => {
+          document.getElementById("commentsHeader").innerHTML +=
+            " (" + commentsData.length + ")";
+          commentsData.forEach((comm) => {
+            const commwrapper = document.createElement("div");
+            commwrapper.classList.add("comment");
+            const userheading = document.createElement("h4");
+            userheading.innerHTML = "User: " + comm.author;
+            const commenttext = document.createElement("div");
+            commenttext.innerHTML = "Comment: " + comm.commentText;
+            commwrapper.appendChild(userheading).appendChild(commenttext);
+            commentarea.appendChild(commwrapper);
+          });
+        });
+    </script>
   </body>
 </html>

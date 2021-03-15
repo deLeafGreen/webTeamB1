@@ -1,4 +1,5 @@
 # webTeamB1
+
 Rezeptvorschläge aus Langeweile
 
 # Vision
@@ -11,24 +12,25 @@ Im Frontend werden Rezepte, zugehörige Bilder und Links angezeigt, zudem gibt e
 
 # Backend
 
-Im Backend sollte ein noch nicht näher bestimmtes DBMS stehen.
-
+Im Backend werden Cookies genutzt um Informationen über die User zu acquirieren.
 
 https://github.com/deLeafGreen/webTeamB1
 
-
 # Wie wird die app gestartet?
+
 gehen Sie in das Eltern Verzeichnis, des repository,
 
 # Windows
+
 ## Docker build
+
 Get-Content .\static\webdocker | docker build -
 
 ## Docker run
+
 docker run -p 8080:3000 -i docker-image
 
 wobei docker image die sha256 id des dockercontainers ist
-
 
 # MacOs/Linux/ andere Unixoide
 
