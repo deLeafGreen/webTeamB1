@@ -1,47 +1,48 @@
-
-
-.wrapper{
-    background-color:lightsteelblue;
-    width: 1000px;
-    height: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+.wrapper {
+  background-color: lightsteelblue;
+  width: 1000px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-h3{
-    text-align: center;
-}
-
-.rezeptbox{
-    height: 300px;
-    width: 40%;
-    float: left;
-    margin: auto;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+h3 {
+  text-align: center;
 }
 
-.rezept{    
-    width: 50%;
-    margin: auto;
-    margin-top: 20%;
+.rezeptbox {
+  height: 300px;
+  width: 40%;
+  float: left;
+  margin: auto;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.caboBild{
-    height: 328px;
-    width: 50%;
-    margin: auto;
-    float: left;
+.rezept {
+  width: 50%;
+  margin: auto;
+  margin-top: 20%;
 }
 
-.Arbeit{
-    width: 60%;
-    height: auto;
-    margin-top: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-    float: left;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.caboBild {
+  height: 328px;
+  width: 50%;
+  margin: auto;
+  float: left;
+}
+
+.Arbeit {
+  width: 60%;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 50px;
+  float: left;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
